@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>SauseDemoTests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin for running unit tests (JUnit 5) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Failsafe Plugin for running integration tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- JUnit 5 API for writing tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test,pages</scope>
+
+        </dependency>
+
+        <!-- JUnit 5 Engine to run tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 Params to enable parameterized tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- WebDriverManager for handling browser drivers -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
+        <!-- Selenium Java for browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
+        <!-- Selenium ChromeDriver for Chrome browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
+        <!-- Selenium FirefoxDriver for Firefox browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
+        <!-- Selenium Support library -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
+        <!-- Google Guava library -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.0.1-jre</version>
+        </dependency>
+    </dependencies>
+</project>
